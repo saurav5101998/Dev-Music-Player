@@ -6,6 +6,8 @@ import { FaGripfire, FaPlay } from "react-icons/fa";
 import { FaSignOutAlt } from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
 import { MdSpaceDashboard } from "react-icons/md";
+import UserProfile from "../../screens/userProfile/userProfile";
+import { Link } from "react-router-dom";
 import apiClient from "../../spotify";
 
 export default function Sidebar() {
@@ -19,14 +21,22 @@ export default function Sidebar() {
     });
   }, []);
   // console.log("signout->",singOut);
-  
+   
+  const userProfileHandler = () =>{
+    apiClient.get("me").then((response) => {
+      setImage(response.data.images[0].url);
+      console.log(response);
+    });
+  }
 
   return (
     <div className="sidebar-container">
-      <img src={image} className="profile-img" alt="profile" />
+      <Link to="/user">
+        <img src={image} className="profile-img" alt="profile" onClick={()=>{userProfileHandler()}} />
+      </Link>
       <div>
        <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} /> 
-       <SidebarButton title="Trending" to="/trending" icon={<FaGripfire />} /> 
+       <SidebarButton title="Browse" to="/browse" icon={<FaGripfire />} /> 
         <SidebarButton title="Player" to="/player" icon={<FaPlay />} />
         <SidebarButton
           title="Favorites"

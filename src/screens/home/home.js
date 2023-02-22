@@ -10,7 +10,9 @@ import Player from '../player/player';
 import Trending from '../trending/trending';
 import { FaSignOutAlt } from "react-icons/fa";
 import SidebarButton from '../../components/sidebar/sidebarButton';
+import UserProfile from '../userProfile/userProfile';
 import "./home.css";
+import BrowseCategory from '../browseCategory/browseCategory';
 function Home() {
   const [token, setToken] = useState("");
   useEffect(()=>{
@@ -41,8 +43,8 @@ function Home() {
         <Routes>
             <Route path="/" element={<Library />} />
             {/* <Route path="/feed" element={<Feed/>} /> */}
-            {/* <Route path="/trending" element={<Trending />} /> */}
-            {/* <Route path="/favourite" element={<Favourite />} /> */}
+            <Route path="/browse" element={<BrowseCategory />} />
+            <Route path="/user" element={<UserProfile />} />
             <Route path="/player" element={<Player />} />
             <Route path="/library" element={<Library />} />
         </Routes>
