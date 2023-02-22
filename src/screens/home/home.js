@@ -13,6 +13,7 @@ import SidebarButton from '../../components/sidebar/sidebarButton';
 import UserProfile from '../userProfile/userProfile';
 import "./home.css";
 import BrowseCategory from '../browseCategory/browseCategory';
+import NewReleases from '../newReleases/newReleases';
 function Home() {
   const [token, setToken] = useState("");
   useEffect(()=>{
@@ -38,15 +39,17 @@ function Home() {
       :
     <Router>
       <div className="main-body">
+        {/* {window.location.pathname != "/login" ?  <Sidebar /> : ""} */}
         <Sidebar />
-        
         <Routes>
+            <Route path="/login" element={<Login />} />
             <Route path="/" element={<Library />} />
             {/* <Route path="/feed" element={<Feed/>} /> */}
             <Route path="/browse" element={<BrowseCategory />} />
             <Route path="/user" element={<UserProfile />} />
             <Route path="/player" element={<Player />} />
             <Route path="/library" element={<Library />} />
+            <Route path="/new-release" element={<NewReleases />} />
         </Routes>
         </div>
         

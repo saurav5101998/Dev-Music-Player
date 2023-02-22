@@ -13,3 +13,10 @@
     border-radius: 20px;
     margin-top: 20px;
 }
+.sideBarOption{
+    /* margin: % 0%; */
+    margin: 0.6rem 0rem;
+}
+.sideBarNone{
+    display: none;
+}
