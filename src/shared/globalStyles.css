@@ -3,7 +3,8 @@
     height: 100%;
     background-color: #1e2a3e;
     border-radius: 30px;
-    background-color: #1e2a3e;
+
+    background-color: 323232;
     opacity: 1;
     background-image: repeating-radial-gradient(
         circle at center left,
@@ -11,6 +12,12 @@
         #233656 100px
       ),
       repeating-linear-gradient(#1e2a3e55, #1e2a3e);
+
+      /* background-color: #e5e5f7;
+      opacity: 0.7;
+      background-image: radial-gradient(circle at center center, #93B5C6, #e5e5f7), repeating-radial-gradient(circle at center center, #93B5C6, #93B5C6, 10px, transparent 20px, transparent 10px);
+      background-blend-mode: multiply; */
+      
     display: flex;
     flex-wrap: wrap;
   }

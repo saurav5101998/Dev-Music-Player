@@ -29,7 +29,7 @@
   }
 
   .playlist-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.10);
   }
   
   .playlist-card:hover .playlist-fade {
