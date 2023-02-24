@@ -14,6 +14,13 @@ function BrowseCategory() {
       
     });
   },[])
+
+  // useEffect(()=>{
+  //   apiClient.get("browse/categories/"+ category?.id + "/playlists").then(function(response){
+  //     console.log("CategoryPlaylist", response);
+  //   })
+  // })
+
   console.log("category--------->",category);
   category.map((cat)=>{
     console.log(cat.name)
@@ -22,7 +29,7 @@ function BrowseCategory() {
     <div className='screen-container'>
         {category.map((cat)=>{ 
             return (
-                <div className='browse-category' key={cat.id}>
+                <div className='playlist-card' key={cat.id}>
                 <div className='imageInside-browse'>
                     <img src={cat.icons[0].url} className="playlist-image" />
                 </div>

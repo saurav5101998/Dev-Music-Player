@@ -16,6 +16,7 @@ import BrowseCategory from '../browseCategory/browseCategory';
 import NewReleases from '../newReleases/newReleases';
 function Home() {
   const [token, setToken] = useState("");
+  const [width, setWidth]  = useState(window.innerWidth);
   useEffect(()=>{
     const token = window.localStorage.getItem("token");
     const hash = window.location.hash;
@@ -31,7 +32,13 @@ function Home() {
     } 
   },[])
 
-  
+  useEffect(()=>{
+    // if(window.innerWidth!=width){
+    // }
+    setWidth(window.innerWidth);
+  },[width]);
+
+  console.log("InnerWidth ", width);
   return (
 
     (!token ?
@@ -40,7 +47,9 @@ function Home() {
     <Router>
       <div className="main-body">
         {/* {window.location.pathname != "/login" ?  <Sidebar /> : ""} */}
+        <div className='SideBarMainDiv'>
         <Sidebar />
+        </div>
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Library />} />

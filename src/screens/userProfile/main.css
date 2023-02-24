@@ -114,3 +114,10 @@ body {
   font-size: 1.2rem;
   color: black;
 }
+
+@media screen and (max-width: 760px) {
+  .profile-card{
+    margin: 0;
+    width: 100%;
+  }
+}

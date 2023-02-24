@@ -17,7 +17,7 @@ export default function NewReleases() {
     <div className='screen-container'>
     {newReleases.map((cat)=>{ 
         return (
-            <div className='browse-category' key={cat.id}>
+            <div className='playlist-card' key={cat.id}>
             <div className='imageInside-browse'>
                 <img src={cat.images[0].url} className="playlist-image" />
             </div>
